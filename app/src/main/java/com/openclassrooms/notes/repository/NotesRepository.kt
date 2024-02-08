@@ -17,22 +17,22 @@ class NotesRepository {
     private val notesApiService: NotesApiService = LocalNotesApiService()
 
 
-    // MutableStateFlow to hold and emit the list of notes.
-    private val listNotes = MutableStateFlow<MutableList<Note>>(mutableListOf())
 
-    // Expose as a read-only Flow.
+     val listNotes = MutableStateFlow<MutableList<Note>>(mutableListOf())
+
+
     val notes = listNotes.asStateFlow()
 
     init {
-        // Initialize the MutableStateFlow with the current list of notes.
+
         listNotes.value = notesApiService.getAllNotes()
     }
 
     fun update(title: String, body: String) {
-        // Add the note through the API service.
+
         notesApiService.addNote(title, body)
 
-        // Update the MutableStateFlow with the new list of notes.
+
         listNotes.value = notesApiService.getAllNotes()
     }
 }

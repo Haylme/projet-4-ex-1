@@ -25,7 +25,7 @@ class NoteViewModel : ViewModel() {
 
 
 
-    val notesViewModel: Flow<MutableList<Note>> = notesRepository.notes
+    val notesViewModel: Flow<MutableList<Note>> = notesRepository.listNotes
 
     fun addNote() {
 
