@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     private val notesAdapter = NotesAdapter(mutableListOf())
 
 
-
     private val noteViewModel = NoteViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun collectNotes() {
         lifecycleScope.launch {
-          noteViewModel.notesViewModel.collect {
+            noteViewModel.notesViewModel.collect {
                 notesAdapter.updateNotes(it)
             }
         }
