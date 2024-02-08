@@ -11,7 +11,7 @@ interface NotesApiService {
 
     /**
      * Add a note
-     * @param note The note to add
+
      */
     fun addNote(title:String,body:String)
 

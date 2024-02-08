@@ -11,26 +11,27 @@ class NoteViewModel : ViewModel() {
     private val notesRepository = NotesRepository()
 
 
-    private var noteTitle:String? = null
-    private var noteBody:String? = null
+    private var noteTitle: String? = null
+    private var noteBody: String? = null
 
 
-    fun setTitle (title:String ){
+    fun setTitle(title: String) {
         noteTitle = title
     }
 
-    fun setMessage (body: String){
+    fun setMessage(body: String) {
         noteBody = body
     }
-
 
 
     val notesViewModel: Flow<MutableList<Note>> = notesRepository.listNotes
 
     fun addNote() {
 
-        val title = noteTitle?: throw IllegalStateException("Title must be set before adding a note !")
-        val body = noteBody?: throw  IllegalStateException("Body must be set before adding a note !")
+        val title =
+            noteTitle ?: throw IllegalStateException("Title must be set before adding a note !")
+        val body =
+            noteBody ?: throw IllegalStateException("Body must be set before adding a note !")
 
         notesRepository.update(title, body)
 

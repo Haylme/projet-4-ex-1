@@ -17,11 +17,10 @@ class NotesRepository {
     private val notesApiService: NotesApiService = LocalNotesApiService()
 
 
+    val listNotes = MutableStateFlow<MutableList<Note>>(mutableListOf())
 
-     val listNotes = MutableStateFlow<MutableList<Note>>(mutableListOf())
 
-
-    val notes = listNotes.asStateFlow()
+    //val notes = listNotes.asStateFlow()
 
     init {
 
