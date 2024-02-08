@@ -5,7 +5,6 @@ import com.openclassrooms.notes.data.Note
 import com.openclassrooms.notes.repository.NotesRepository
 import kotlinx.coroutines.flow.Flow
 import java.lang.IllegalStateException
-import kotlin.IllegalStateException
 
 class NoteViewModel : ViewModel() {
 
