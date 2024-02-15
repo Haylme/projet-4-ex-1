@@ -68,9 +68,8 @@ class MainActivity : AppCompatActivity() {
                     val title = editTextTitle.text.toString()
                     val body = editTextBody.text.toString()
 
-                    noteViewModel.setTitle(title)
-                    noteViewModel.setMessage(body)
-                    noteViewModel.addNote()
+
+                    noteViewModel.addNote(title, body)
                 }
                 setNegativeButton(android.R.string.cancel, null)
             }.show()
